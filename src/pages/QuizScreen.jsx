@@ -2,16 +2,20 @@
 import { useState } from "react";
 
 //Project files
+import { useGameState } from "../helpers/GameStateProvider";
 import questions from "../data/questions.json";
 
 export default function QuizScreen() {
+  //Global State
+  const {gameState, setGameState } = useGameState();
+console.log(gameState)
   //Local state
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  
+
   //Methods
   function onAnswer() {
     const nextQuestion = currentQuestion + 1;
-    nextQuestion < 10 ? setCurrentQuestion(nextQuestion):alert("finished");
+    nextQuestion < 10 ? setCurrentQuestion(nextQuestion):setGameState('finished');
   }
 
   //properties
