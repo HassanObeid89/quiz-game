@@ -7,7 +7,7 @@ import questions from "../data/questions.json";
 
 export default function QuizScreen() {
   //Global State
-  const { gameState, setGameState } = useGameState();
+  const { setGameState } = useGameState();
 
   //Local state
   const [currentQuestion, setCurrentQuestion] = useState(0);
