@@ -7,8 +7,9 @@ const ScoreContext = createContext("");
 export function ScoreProvider({ children }) {
   // Local state
   const [score, setScore] = useState(0);
+  const [inCorrect, setInCorrect] = useState(0);
   return (
-    <ScoreContext.Provider value={{ score, setScore }}>
+    <ScoreContext.Provider value={{ score, setScore, inCorrect, setInCorrect }}>
       {children}
     </ScoreContext.Provider>
   );

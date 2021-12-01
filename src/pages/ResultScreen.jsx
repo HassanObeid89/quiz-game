@@ -4,12 +4,14 @@ import { useScore } from "../helpers/ScoreProvider";
 export default function ResultScreen() {
 
   //Global State
-  const { score } = useScore();
+  const { score, inCorrect } = useScore();
 
   return (
     <div>
       <h1>Quiz Finished!</h1>
-      <p>Your Score is {score} out if 10</p>
+      <p>Correct Answers: {score}</p>
+      <p>Incorrect Answers: {inCorrect}</p>
+      <p>Your Score is {score} out of 10</p>
     </div>
   );
 }

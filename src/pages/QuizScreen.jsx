@@ -9,16 +9,14 @@ import { useScore } from "../helpers/ScoreProvider";
 export default function QuizScreen() {
   //Global State
   const { setGameState } = useGameState();
-  const { score, setScore } = useScore();
-  
+  const { score, setScore, inCorrect, setInCorrect } = useScore();
+
   //Local state
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   //Methods
   function onAnswer(isCorrect) {
-    if (isCorrect == true) {
-      setScore(score + 1);
-    }
+    isCorrect ? setScore(score + 1) : setInCorrect(inCorrect + 1);
     const nextQuestion = currentQuestion + 1;
     nextQuestion < 10
       ? setCurrentQuestion(nextQuestion)
