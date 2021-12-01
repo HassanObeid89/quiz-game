@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useGameState } from "../helpers/GameStateProvider";
 import questions from "../data/questions.json";
 import { useScore } from "../helpers/ScoreProvider";
-
+import DownTimer from '../components/DownTimer'
 export default function QuizScreen() {
   //Global State
   const { setGameState } = useGameState();
@@ -23,6 +23,7 @@ export default function QuizScreen() {
       : setGameState("finished");
   }
 
+  
   //properties
   const answer = questions[currentQuestion].answers.map(
     (answerOption, index) => (
@@ -35,6 +36,7 @@ export default function QuizScreen() {
   return (
     <div>
       <h1>Quiz page</h1>
+      <DownTimer question={[currentQuestion, setCurrentQuestion]}/>
       {questions[currentQuestion].text}
       <section>{answer}</section>
     </div>
