@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useGameState } from "../helpers/GameStateProvider";
 import { useScore } from "../helpers/ScoreProvider";
+import { useTimer } from "../helpers/TimerProvider";
 export default function DownTimer({ question }) {
   const { setGameState } = useGameState();
   const { unAnswered, setUnanswered } = useScore();
   const [currentQuestion, setCurrentQuestion] = question;
-  const [remainingTime, setRemainingTime] = useState(15);
+  const {remainingTime, setRemainingTime} = useTimer();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
