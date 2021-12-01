@@ -4,16 +4,19 @@ import { useState } from "react";
 //Project files
 import { useGameState } from "../helpers/GameStateProvider";
 import questions from "../data/questions.json";
+import { useScore } from "../helpers/ScoreProvider";
 
 export default function QuizScreen() {
   //Global State
-  const { gameState, setGameState } = useGameState();
+  const { setGameState } = useGameState();
+  const { score, setScore, inCorrect, setInCorrect } = useScore();
 
   //Local state
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   //Methods
-  function onAnswer() {
+  function onAnswer(isCorrect) {
+    isCorrect ? setScore(score + 1) : setInCorrect(inCorrect + 1);
     const nextQuestion = currentQuestion + 1;
     nextQuestion < 10
       ? setCurrentQuestion(nextQuestion)
@@ -23,7 +26,7 @@ export default function QuizScreen() {
   //properties
   const answer = questions[currentQuestion].answers.map(
     (answerOption, index) => (
-      <button key={index} onClick={onAnswer}>
+      <button key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
         {answerOption.option}
       </button>
     )
