@@ -1,7 +1,18 @@
+//Project files
+import { useGameState } from "./helpers/GameStateProvider";
+import WelcomeScreen from "./pages/WelcomeScreen";
+import QuizScreen from "./pages/QuizScreen";
+import ResultScreen from "./pages/WelcomeScreen";
+
 export default function App() {
+  //Global State
+  const { gameState } = useGameState();
+
   return (
     <div className="App">
-      <h1>Quiz game</h1>
+      {gameState === "welcomeScreen" && <WelcomeScreen />}
+      {gameState === "playing" && <QuizScreen />}
+      {gameState === "finished" && <ResultScreen />}
     </div>
   );
 }
