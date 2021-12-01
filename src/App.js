@@ -7,7 +7,7 @@ import ResultScreen from "./pages/ResultScreen";
 export default function App() {
   //Global State
   const { gameState } = useGameState();
-console.log(gameState)
+
   return (
     <div className="App">
       {gameState === "welcomeScreen" && <WelcomeScreen />}

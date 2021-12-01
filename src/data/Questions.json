@@ -13,10 +13,19 @@
     "id": 2,
     "text": "What is the correct JavaScript syntax to change the content of the HTML element? <p id='demo'>This is a demonstration.</p>",
     "answers": [
-      { "option": "document.getElementById('demo').innerHTML = 'Hello World!';", "isCorrect": true },
+      {
+        "option": "document.getElementById('demo').innerHTML = 'Hello World!';",
+        "isCorrect": true
+      },
       { "option": "#demo.innerHTML = 'Hello World!';", "isCorrect": false },
-      { "option": "document.getElement('p').innerHTML = 'Hello World!';", "isCorrect": false },
-      { "option": "document.getElementByName('p').innerHTML = 'Hello World!';", "isCorrect": false }
+      {
+        "option": "document.getElement('p').innerHTML = 'Hello World!';",
+        "isCorrect": false
+      },
+      {
+        "option": "document.getElementByName('p').innerHTML = 'Hello World!';",
+        "isCorrect": false
+      }
     ]
   },
   {

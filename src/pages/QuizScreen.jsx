@@ -7,15 +7,17 @@ import questions from "../data/questions.json";
 
 export default function QuizScreen() {
   //Global State
-  const {gameState, setGameState } = useGameState();
-console.log(gameState)
+  const { gameState, setGameState } = useGameState();
+
   //Local state
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   //Methods
   function onAnswer() {
     const nextQuestion = currentQuestion + 1;
-    nextQuestion < 10 ? setCurrentQuestion(nextQuestion):setGameState('finished');
+    nextQuestion < 10
+      ? setCurrentQuestion(nextQuestion)
+      : setGameState("finished");
   }
 
   //properties
