@@ -8,8 +8,18 @@ export function ScoreProvider({ children }) {
   // Local state
   const [score, setScore] = useState(0);
   const [inCorrect, setInCorrect] = useState(0);
+  const [unAnswered, setUnanswered] = useState(0);
   return (
-    <ScoreContext.Provider value={{ score, setScore, inCorrect, setInCorrect }}>
+    <ScoreContext.Provider
+      value={{
+        score,
+        setScore,
+        inCorrect,
+        setInCorrect,
+        unAnswered,
+        setUnanswered,
+      }}
+    >
       {children}
     </ScoreContext.Provider>
   );
