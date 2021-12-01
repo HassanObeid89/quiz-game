@@ -2,7 +2,7 @@
 import { useGameState } from "./helpers/GameStateProvider";
 import WelcomeScreen from "./pages/WelcomeScreen";
 import QuizScreen from "./pages/QuizScreen";
-import ResultScreen from "./pages/WelcomeScreen";
+import ResultScreen from "./pages/ResultScreen";
 
 export default function App() {
   //Global State

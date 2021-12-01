@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "text": "Inside which HTML element do we put the JavaScript?",
+    "answers": [
+      { "option": "<javascript>", "isCorrect": false },
+      { "option": "<js>", "isCorrect": false },
+      { "option": "<scripting>", "isCorrect": false },
+      { "option": "<script>", "isCorrect": true }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "What is the correct JavaScript syntax to change the content of the HTML element? <p id='demo'>This is a demonstration.</p>",
+    "answers": [
+      {
+        "option": "document.getElementById('demo').innerHTML = 'Hello World!';",
+        "isCorrect": true
+      },
+      { "option": "#demo.innerHTML = 'Hello World!';", "isCorrect": false },
+      {
+        "option": "document.getElement('p').innerHTML = 'Hello World!';",
+        "isCorrect": false
+      },
+      {
+        "option": "document.getElementByName('p').innerHTML = 'Hello World!';",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Where is the correct place to insert a JavaScript?",
+    "answers": [
+      { "option": "The <body> section", "isCorrect": false },
+      { "option": "The <head> section", "isCorrect": false },
+      { "option": "Both the <head> and the <body>", "isCorrect": true },
+      { "option": "None of the above", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    "answers": [
+      { "option": "<script src='xxx.js'>", "isCorrect": true },
+      { "option": "<script name='xxx.js'>", "isCorrect": false },
+      { "option": "<script href='xxx.js'>", "isCorrect": false },
+      { "option": "<script='xxx.js'>", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "How do you write 'Hello World' in an alert box?",
+    "answers": [
+      { "option": "msg('Hello world)", "isCorrect": false },
+      { "option": "msgBox('Hello world)", "isCorrect": false },
+      { "option": "alertBox('Hello world)", "isCorrect": false },
+      { "option": "alert('Hello world)", "isCorrect": true }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "How do you create a function in JavaScript?",
+    "answers": [
+      { "option": "function = myFunction()", "isCorrect": false },
+      { "option": "function:myFunction()", "isCorrect": false },
+      { "option": "function myFunction()", "isCorrect": true },
+      { "option": "fun myFunction()", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "How do you call a function named 'myFunction'?",
+    "answers": [
+      { "option": "myFunction()", "isCorrect": true },
+      { "option": "call myFunction()", "isCorrect": false },
+      { "option": "call function myFunction()", "isCorrect": false },
+      { "option": "myFunction", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "How to write an IF statement in JavaScript?",
+    "answers": [
+      { "option": "if i = 5 then", "isCorrect": false },
+      { "option": "if (i == 5)", "isCorrect": true },
+      { "option": "if i = 5", "isCorrect": false },
+      { "option": "if i == 5", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 9,
+    "text": "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+    "answers": [
+      { "option": "if i <> 5 ", "isCorrect": false },
+      { "option": "if (i != 5)", "isCorrect": true },
+      { "option": "if i =! 5", "isCorrect": false },
+      { "option": "if (i <> 5)", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 10,
+    "text": "What is the correct way to write a JavaScript array?",
+    "answers": [
+      { "option": "var colors = (1:'red', 2:'green')", "isCorrect": false },
+      { "option": "var colors = (1='red', 2='green')", "isCorrect": false },
+      { "option": "var colors = [1:'red', 2:'green']", "isCorrect": false },
+      { "option": "var colors = ['red', 'green']", "isCorrect": true }
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Which event occurs when the user clicks on an HTML element?",
+    "answers": [
+      { "option": "onmouseclick", "isCorrect": false },
+      { "option": "onchange", "isCorrect": false },
+      { "option": "onmouseover", "isCorrect": false },
+      { "option": "onclick", "isCorrect": true }
+    ]
+  },
+  {
+    "id": 12,
+    "text": "Which operator is used to assign a value to a variable?",
+    "answers": [
+      { "option": "=", "isCorrect": true },
+      { "option": "x", "isCorrect": false },
+      { "option": "*", "isCorrect": false },
+      { "option": "-", "isCorrect": false }
+    ]
+  }
+]
