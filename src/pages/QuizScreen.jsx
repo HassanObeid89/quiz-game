@@ -7,6 +7,7 @@ import questions from "../data/questions.json";
 import { useScore } from "../helpers/ScoreProvider";
 import { useTimer } from "../helpers/TimerProvider";
 import DownTimer from '../components/DownTimer'
+import PlusTen from "../components/PlusTen";
 
 export default function QuizScreen() {
   //Global State
@@ -40,6 +41,7 @@ export default function QuizScreen() {
   return (
     <div>
       <h1>Quiz page</h1>
+      <PlusTen />
       <DownTimer question={[currentQuestion, setCurrentQuestion]}/>
       {questions[currentQuestion].text}
       <section>{answer}</section>
