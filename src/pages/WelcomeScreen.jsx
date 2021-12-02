@@ -12,7 +12,7 @@ export default function WelcomeScreen() {
         <li>You will have only 15 seconds per each question</li>
         <li>You can use once those two options 'delete two wrong answers' & 'add more 10 seconds'</li>
       </ul>
-      <button onClick={() => setGameState("playing")}>Start Game</button>
+      <button data-testid='startGame' onClick={() => setGameState("playing")}>Start Game</button>
     </div>
   );
 }
