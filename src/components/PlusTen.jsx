@@ -8,10 +8,8 @@ export default function PlusTen() {
     setIsUsed(true);
   }
   return (
-    <div>
-      <button disabled={isUsed} onClick={addTenSec}>
-        +10 sec
-      </button>
-    </div>
+    <button disabled={isUsed} onClick={addTenSec}>
+      +10 sec
+    </button>
   );
 }
