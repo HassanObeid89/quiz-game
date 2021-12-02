@@ -6,7 +6,7 @@ export default function WelcomeScreen() {
   const { setGameState } = useGameState();
 
   return (
-    <div>
+    <div className='welcome_wrapper' >
       <h1>Are you ready to test your JavaScript skills?</h1>
       <ul>
         <li>You will have only 15 seconds per each question</li>
