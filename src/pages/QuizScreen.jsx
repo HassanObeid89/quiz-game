@@ -48,8 +48,9 @@ export default function QuizScreen() {
   ));
 
   return (
-    <div>
-      <h1>Quiz page</h1>
+    <div className='quiz_wrapper'>
+      <h1>Question {currentQuestion}/10</h1>
+      <section className='options'>
       <PlusTen />
       <FiftyLifeLine
         isUsed={isUsed}
@@ -57,9 +58,12 @@ export default function QuizScreen() {
         currentQuestion={currentQuestion}
       />
       <DownTimer question={[currentQuestion, setCurrentQuestion]} />
-      {questions[currentQuestion].text}
+      </section>
+      <h2>{questions[currentQuestion].text}</h2>
+      <section className='answers'>
       {isUsed === false && <section>{answer}</section>}
       {isUsed === true && <section>{fiftyAnswers}</section>}
+      </section>
     </div>
   );
 }
