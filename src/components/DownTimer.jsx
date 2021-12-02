@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect,useCallback } from "react";
 import { useGameState } from "../helpers/GameStateProvider";
 import { useScore } from "../helpers/ScoreProvider";
 import { useTimer } from "../helpers/TimerProvider";
@@ -8,6 +8,38 @@ export default function DownTimer({ question }) {
   const [currentQuestion, setCurrentQuestion] = question;
   const {remainingTime, setRemainingTime} = useTimer();
 
+  
+
+  // function updateRemainingTime() {
+    
+  // }
+
+  const onCountDown = useCallback(
+    async() => {
+      await setRemainingTime(remainingTime - 1);
+    },
+    [remainingTime,setRemainingTime],
+  )
+
+  const onReset = useCallback(
+    async() => {
+     await setRemainingTime(15);
+    const nextQuestion = currentQuestion + 1;
+    nextQuestion < 10
+      ? setCurrentQuestion(nextQuestion)
+      : setGameState("finished");
+    setUnanswered(unAnswered + 1);
+    },
+    [currentQuestion,setCurrentQuestion,setGameState,setRemainingTime,setUnanswered,unAnswered],
+  )
+
+  const updateRemainingTime = useCallback(
+    () => {
+      remainingTime > 0 ? onCountDown() : onReset();
+    },
+    [onCountDown,onReset,remainingTime],
+  )
+  
   useEffect(() => {
     const intervalId = setInterval(() => {
       updateRemainingTime();
@@ -16,22 +48,20 @@ export default function DownTimer({ question }) {
     return () => clearInterval(intervalId);
   }, [updateRemainingTime]);
 
-  function updateRemainingTime() {
-    remainingTime > 0 ? onCountDown() : onReset();
-  }
+  // function onCountDown() {
+  //   setRemainingTime(remainingTime - 1);
+  // }
 
-  function onCountDown() {
-    setRemainingTime(remainingTime - 1);
-  }
+  
 
-  function onReset() {
-    setRemainingTime(15);
-    const nextQuestion = currentQuestion + 1;
-    nextQuestion < 10
-      ? setCurrentQuestion(nextQuestion)
-      : setGameState("finished");
-    setUnanswered(unAnswered + 1);
-  }
+  // function onReset() {
+  //   setRemainingTime(15);
+  //   const nextQuestion = currentQuestion + 1;
+  //   nextQuestion < 10
+  //     ? setCurrentQuestion(nextQuestion)
+  //     : setGameState("finished");
+  //   setUnanswered(unAnswered + 1);
+  // }
 
   return <div>{remainingTime}</div>;
 }
