@@ -8,7 +8,7 @@ export default function ResultScreen() {
   const { score, inCorrect, unAnswered } = useScore();
   const { setGameState } = useGameState();
   return (
-    <div>
+    <div className='welcome_wrapper'>
       <h1>Quiz Finished!</h1>
       <p>Correct Answers: {score}</p>
       <p>Incorrect Answers: {inCorrect}</p>

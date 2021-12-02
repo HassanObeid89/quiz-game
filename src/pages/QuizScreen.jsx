@@ -35,7 +35,7 @@ export default function QuizScreen() {
   //properties
   const answer = questions[currentQuestion].answers.map(
     (answerOption, index) => (
-      <button  key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
+      <button key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
         {answerOption.option}
       </button>
     )
@@ -48,18 +48,22 @@ export default function QuizScreen() {
   ));
 
   return (
-    <div>
-      <h1>Quiz page</h1>
-      <PlusTen />
-      <FiftyLifeLine
-        isUsed={isUsed}
-        setIsUsed={setIsUsed}
-        currentQuestion={currentQuestion}
-      />
-      <DownTimer question={[currentQuestion, setCurrentQuestion]} />
-      {questions[currentQuestion].text}
-      {isUsed === false && <section>{answer}</section>}
-      {isUsed === true && <section>{fiftyAnswers}</section>}
+    <div className="quiz_wrapper">
+      <h1>Question {currentQuestion + 1}/10</h1>
+      <section className="options">
+        <PlusTen />
+        <FiftyLifeLine
+          isUsed={isUsed}
+          setIsUsed={setIsUsed}
+          currentQuestion={currentQuestion}
+        />
+        <DownTimer question={[currentQuestion, setCurrentQuestion]} />
+      </section>
+      <h2>{questions[currentQuestion].text}</h2>
+      <section className="answers">
+        {isUsed === false && <section>{answer}</section>}
+        {isUsed === true && <section>{fiftyAnswers}</section>}
+      </section>
     </div>
   );
 }
