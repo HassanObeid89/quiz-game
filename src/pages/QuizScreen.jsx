@@ -29,7 +29,7 @@ export default function QuizScreen() {
       ? setCurrentQuestion(nextQuestion)
       : setGameState("finished");
     setRemainingTime(15);
-    setIsUsed(false)
+    setIsUsed(false);
   }
 
   //properties
@@ -41,7 +41,7 @@ export default function QuizScreen() {
     )
   );
 
-  const answers = modifiedQuestion.map((answerOption, index) => (
+  const fiftyAnswers = modifiedQuestion.map((answerOption, index) => (
     <button key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
       {answerOption.option}
     </button>
@@ -59,7 +59,7 @@ export default function QuizScreen() {
       <DownTimer question={[currentQuestion, setCurrentQuestion]} />
       {questions[currentQuestion].text}
       {isUsed === false && <section>{answer}</section>}
-      {isUsed === true && <section>{answers}</section>}
+      {isUsed === true && <section>{fiftyAnswers}</section>}
     </div>
   );
 }
