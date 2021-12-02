@@ -35,7 +35,7 @@ export default function QuizScreen() {
   //properties
   const answer = questions[currentQuestion].answers.map(
     (answerOption, index) => (
-      <button key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
+      <button  key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
         {answerOption.option}
       </button>
     )
