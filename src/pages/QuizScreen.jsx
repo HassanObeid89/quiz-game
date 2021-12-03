@@ -10,6 +10,7 @@ import DownTimer from "../components/DownTimer";
 import PlusTen from "../components/PlusTen";
 import FiftyLifeLine from "../components/FiftyLifeLine";
 import { useQuestion } from "../helpers/QuestionProvider";
+import { useRandonArray } from "../helpers/QuestionsProvider";
 
 export default function QuizScreen() {
   //Global State
@@ -18,7 +19,9 @@ export default function QuizScreen() {
   const { score, setScore, inCorrect, setInCorrect } = useScore();
   const { setRemainingTime } = useTimer();
   const [isUsed, setIsUsed] = useState(false);
+  const { randomArray } = useRandonArray();
   //Local state
+  let random = Math.floor(Math.random() * 12);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   //Methods
@@ -33,7 +36,9 @@ export default function QuizScreen() {
   }
 
   //properties
-  const answer = questions[currentQuestion].answers.map(
+  const question = questions.map((ques) => <h2>{ques.text}</h2>);
+
+  const answer = questions[randomArray[currentQuestion]].answers.map(
     (answerOption, index) => (
       <button key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
         {answerOption.option}
@@ -59,7 +64,7 @@ export default function QuizScreen() {
         />
         <DownTimer question={[currentQuestion, setCurrentQuestion]} />
       </section>
-      <h2>{questions[currentQuestion].text}</h2>
+      {question[randomArray[currentQuestion]]}
       <section className="answers">
         {isUsed === false && <section>{answer}</section>}
         {isUsed === true && <section>{fiftyAnswers}</section>}
