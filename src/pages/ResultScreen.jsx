@@ -4,8 +4,22 @@ import { useGameState } from "../helpers/GameStateProvider";
 
 export default function ResultScreen() {
   //Global State
-  const { score, inCorrect, unAnswered } = useScore();
+  const {
+    score,
+    setScore,
+    inCorrect,
+    setInCorrect,
+    unAnswered,
+    setUnanswered,
+  } = useScore();
+
   const { setGameState } = useGameState();
+  function onRestart() {
+    setGameState("welcomeScreen");
+    setInCorrect(0);
+    setScore(0);
+    setUnanswered(0);
+  }
   return (
     <div className="welcome_wrapper">
       <h1>Quiz Finished!</h1>
@@ -13,9 +27,7 @@ export default function ResultScreen() {
       <p>Incorrect Answers: {inCorrect}</p>
       <p>unAnswered: {unAnswered}</p>
       <p>Your Score is {score} out of 10</p>
-      <button onClick={() => setGameState("welcomeScreen")}>
-        Restart Game
-      </button>
+      <button onClick={onRestart}>Restart Game</button>
     </div>
   );
 }
