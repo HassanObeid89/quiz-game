@@ -9,19 +9,19 @@ import { useTimer } from "../helpers/TimerProvider";
 import DownTimer from "../components/DownTimer";
 import PlusTen from "../components/PlusTen";
 import FiftyLifeLine from "../components/FiftyLifeLine";
-import { useQuestion } from "../helpers/QuestionProvider";
 import { useRandonArray } from "../helpers/QuestionsProvider";
+import { useFifty } from "../helpers/FifityAnswersProvider";
 
 export default function QuizScreen() {
   //Global State
   const { setGameState } = useGameState();
-  const { modifiedQuestion } = useQuestion();
+  const { modifiedQuestion } = useFifty();
   const { score, setScore, inCorrect, setInCorrect } = useScore();
   const { setRemainingTime } = useTimer();
   const [isUsed, setIsUsed] = useState(false);
   const { randomArray } = useRandonArray();
+
   //Local state
-  let random = Math.floor(Math.random() * 12);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   //Methods

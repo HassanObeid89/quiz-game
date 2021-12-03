@@ -21,7 +21,7 @@ export default function WelcomeScreen() {
   }
 
   function onStart() {
-    const randomArr = shuffle([0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+    const randomArr = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
     dispatchRandomArray({ type: "SET_QUESTION", payload: randomArr });
     setGameState("playing");
   }
