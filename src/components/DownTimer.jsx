@@ -40,5 +40,5 @@ export default function DownTimer({ question }) {
     return () => clearInterval(intervalId);
   }, [updateRemainingTime]);
 
-  return <div className='timer'>{remainingTime}</div>;
+  return <div className="timer">{remainingTime}</div>;
 }

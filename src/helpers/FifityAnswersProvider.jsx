@@ -7,8 +7,7 @@ const FiftyContext = createContext("");
 export function FifityAnswersProvider({ children }) {
   // Local state
   const [modifiedQuestion, setQuestion] = useState([]);
-  
-  
+
   return (
     <FiftyContext.Provider value={{ modifiedQuestion, setQuestion }}>
       {children}

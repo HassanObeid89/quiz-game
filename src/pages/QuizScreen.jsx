@@ -20,8 +20,8 @@ export default function QuizScreen() {
   const { setRemainingTime } = useTimer();
   const [isUsed, setIsUsed] = useState(false);
   const { randomArray } = useRandonArray();
+
   //Local state
-  let random = Math.floor(Math.random() * 12);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   //Methods

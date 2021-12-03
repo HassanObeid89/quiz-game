@@ -13,7 +13,10 @@ export function QuestionsProvider({ children }) {
 
   return (
     <questionContext.Provider
-      value={{ randomArray: randomArray, dispatchRandomArray: dispatchRandomArray }}
+      value={{
+        randomArray: randomArray,
+        dispatchRandomArray: dispatchRandomArray,
+      }}
     >
       {children}
     </questionContext.Provider>

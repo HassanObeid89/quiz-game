@@ -5,7 +5,7 @@ import { GameStateProvider } from "./helpers/GameStateProvider";
 import { FifityAnswersProvider } from "./helpers/FifityAnswersProvider";
 import { QuestionsProvider } from "./helpers/QuestionsProvider";
 import { ScoreProvider } from "./helpers/ScoreProvider";
-import {TimerProvider} from './helpers/TimerProvider';
+import { TimerProvider } from "./helpers/TimerProvider";
 
 ReactDOM.render(
   <GameStateProvider>
@@ -13,9 +13,9 @@ ReactDOM.render(
       <TimerProvider>
         <FifityAnswersProvider>
           <QuestionsProvider>
-      <App />
-      </QuestionsProvider>
-      </FifityAnswersProvider>
+            <App />
+          </QuestionsProvider>
+        </FifityAnswersProvider>
       </TimerProvider>
     </ScoreProvider>
   </GameStateProvider>,

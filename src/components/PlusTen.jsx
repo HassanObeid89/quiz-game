@@ -8,9 +8,9 @@ export default function PlusTen() {
     setRemainingTime(remainingTime + 10);
     setIsUsed(true);
   }
-  
+
   return (
-    <button data-testid='plusTen' disabled={isUsed} onClick={addTenSec}>
+    <button data-testid="plusTen" disabled={isUsed} onClick={addTenSec}>
       +10 sec
     </button>
   );
