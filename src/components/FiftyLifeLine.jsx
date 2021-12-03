@@ -2,8 +2,8 @@ import { useState } from "react";
 import questions from "../data/questions.json";
 import { useFifty } from "../helpers/FifityAnswersProvider";
 
-export default function FiftyLifeLine({ currentQuestion, setIsUsed, isUsed }) {
-  const { setQuestion } = useFifty();
+export default function FiftyLifeLine({ currentQuestion, setIsUsed }) {
+  const { setAnswers } = useFifty();
   const [newArr, setNewArr] = useState([]);
   const [disabled, setDisabled] = useState(false);
 
@@ -19,9 +19,9 @@ export default function FiftyLifeLine({ currentQuestion, setIsUsed, isUsed }) {
   //Methods
   function onFiftyFifty() {
     let randomIndex = Math.floor(Math.random() * 3);
-    console.log(randomIndex);
+    
     setNewArr([...newArr, randon[randomIndex], ...correctAnswer]);
-    setQuestion([randon[randomIndex], ...correctAnswer]);
+    setAnswers([randon[randomIndex], ...correctAnswer]);
     setIsUsed(true);
     setDisabled(true);
   }

@@ -15,7 +15,7 @@ import { useFifty } from "../helpers/FifityAnswersProvider";
 export default function QuizScreen() {
   //Global State
   const { setGameState } = useGameState();
-  const { modifiedQuestion } = useFifty();
+  const { modifiedAnswers } = useFifty();
   const { score, setScore, inCorrect, setInCorrect } = useScore();
   const { setRemainingTime } = useTimer();
   const [isUsed, setIsUsed] = useState(false);
@@ -46,7 +46,7 @@ export default function QuizScreen() {
     )
   );
 
-  const fiftyAnswers = modifiedQuestion.map((answerOption, index) => (
+  const fiftyAnswers = modifiedAnswers.map((answerOption, index) => (
     <button key={index} onClick={() => onAnswer(answerOption.isCorrect)}>
       {answerOption.option}
     </button>
@@ -58,9 +58,8 @@ export default function QuizScreen() {
       <section className="options">
         <PlusTen />
         <FiftyLifeLine
-          isUsed={isUsed}
           setIsUsed={setIsUsed}
-          currentQuestion={currentQuestion}
+          currentQuestion={[randomArray[currentQuestion]]}
         />
         <DownTimer question={[currentQuestion, setCurrentQuestion]} />
       </section>
