@@ -20,6 +20,9 @@ export default function ResultScreen() {
     setScore(0);
     setUnanswered(0);
   }
+  console.log(unAnswered)
+  console.log(inCorrect)
+  console.log(score)
   return (
     <div className="welcome_wrapper">
       <h1>Quiz Finished!</h1>

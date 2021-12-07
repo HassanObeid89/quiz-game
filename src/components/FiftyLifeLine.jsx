@@ -4,11 +4,10 @@ import { useFifty } from "../helpers/FifityAnswersProvider";
 
 export default function FiftyLifeLine({ currentQuestion, setIsUsed }) {
   const { setAnswers } = useFifty();
-  const [newArr, setNewArr] = useState([]);
   const [disabled, setDisabled] = useState(false);
 
   //properties
-  const randon = questions[currentQuestion].answers.filter(
+  const random = questions[currentQuestion].answers.filter(
     (answerOption) => answerOption.isCorrect === false
   );
 
@@ -20,8 +19,7 @@ export default function FiftyLifeLine({ currentQuestion, setIsUsed }) {
   function onFiftyFifty() {
     let randomIndex = Math.floor(Math.random() * 3);
     
-    setNewArr([...newArr, randon[randomIndex], ...correctAnswer]);
-    setAnswers([randon[randomIndex], ...correctAnswer]);
+    setAnswers([random[randomIndex], ...correctAnswer]);
     setIsUsed(true);
     setDisabled(true);
   }
